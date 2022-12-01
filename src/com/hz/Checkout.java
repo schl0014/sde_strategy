@@ -1,8 +1,14 @@
 package com.hz;
+import discounts.ChristmasEve;
+import discounts.DiscountCalculator;
+
+import discounts.DiscountCalculator;
 
 public class Checkout {
 
     private SalesAction salesAction;
+
+
 
     public Checkout(SalesAction action) {
         this.salesAction = action;
@@ -13,8 +19,9 @@ public class Checkout {
         // init checkout
         DiscountCalculator discountCalculator = new DiscountCalculator(customer);
         if(salesAction == SalesAction.ChristmasEve) {
-            discountCalculator.setChristmasEve(true);
+            ChristmasEve.setChristmasEve(true);
         }
+
 
         // Welcome customer
         String welcome = String.format("Hello %s, would you pass me your shopping cart?",

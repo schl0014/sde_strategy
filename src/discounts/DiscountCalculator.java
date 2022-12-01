@@ -1,16 +1,14 @@
-package com.hz;
+package discounts;
 
+import com.hz.Customer;
 import products.Product;
 
 public class DiscountCalculator {
 
     private Customer customer;
 
-    public void setChristmasEve(boolean christmasEve) {
-        isChristmasEve = christmasEve;
-    }
 
-    private boolean isChristmasEve;
+
 
     public DiscountCalculator(Customer customer) {
         this.customer = customer;
@@ -23,7 +21,7 @@ public class DiscountCalculator {
         boolean isFirstProduct = index == 0;
 
         // on Christmas Eve, 1st product 20%, the next 12.5% discount
-        if(isChristmasEve) {
+        if(ChristmasEve.isChristmasEve) {
 
             if(isFirstProduct) {
                 discount = .20;
